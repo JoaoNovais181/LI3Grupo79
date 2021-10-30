@@ -1,2 +1,2 @@
-/guiao-1/entrada/
-/guiao-1/saida
+/guiao-1/entrada/*.csv
+/guiao-1/saida/*.csv
