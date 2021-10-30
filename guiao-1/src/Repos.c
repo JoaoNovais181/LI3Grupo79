@@ -236,6 +236,8 @@ void write_repo_to_file (FILE *file, GH_REPO repo)
 
 int write_repos_to_file (char* file_path, GH_REPO_ARRAY repos)
 {
+    if (!repos) return -1;
+    
     FILE *file = fopen(file_path, "w");
 
     if (!file) return -1;

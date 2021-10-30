@@ -325,6 +325,8 @@ GH_USER build_user(char *line)   // Função utilizada para criar o utilizador f
 
 int write_users_to_file (char *path, GH_USER_ARRAY users)
 {
+    if (!users) return -1;
+    
     FILE *file = fopen(path, "w");
     
     if (!file) return -1;

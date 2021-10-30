@@ -95,6 +95,8 @@ void write_commit_to_file (FILE *file, GH_COMMIT commit)
 
 int write_commits_to_file (char* file_path, GH_COMMIT_ARRAY commits)
 {
+    if (!commits) return  -1;
+    
     FILE *file = fopen(file_path, "w");
 
     if (!file) return -1;
