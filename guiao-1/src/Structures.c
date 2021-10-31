@@ -62,3 +62,17 @@ int strtonum (char* str, int *num)
 
     return 1;
 }
+
+int search (int *array, int beg, int end, int val)
+{
+    int mid;
+
+    for (mid = ((end + beg)/2) ; (end - beg-1) ; mid = ((end + beg)/2))
+    {
+        if (val < array[mid]) end = mid;
+        else if (val > array[mid]) beg = mid;
+        else return mid;
+    }
+
+    return -1;
+}

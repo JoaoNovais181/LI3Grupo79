@@ -27,11 +27,11 @@ typedef struct gh_user
     int public_repos;
 } *GH_USER;
 
-typedef struct gh_user_array 
+typedef struct gh_user_array   // Estrutura para o array de utilizadores
 {
-    int max_size;
-    int size;
-    GH_USER *array;
+    int max_size;    // Tamanho maximo de utilizadores que cabem no array 
+    int size;        // Numero de utilizadores no array
+    GH_USER *array;  // Array de utilizadores
 } *GH_USER_ARRAY;
 
 typedef struct gh_commit
@@ -41,6 +41,7 @@ typedef struct gh_commit
     int commiter_id;
     struct tm commit_at;
     char* message;
+    int valid;
 } *GH_COMMIT;
 
 typedef struct gh_commit_array

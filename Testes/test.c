@@ -229,45 +229,28 @@ int main ()
 {
     int size = 10000000;
     int *array = malloc(size * sizeof(int));
-    int *array2 = calloc(size, sizeof(int));
 
     srand(time(NULL));
 
     for (int i = 0 ; i<size ; i++)
     {
-        int random = rand() % 9;
+        int random = rand() % 999999;
         // int random = i;
         array[i] = random;
-        array2[i] = random;
     }
-
-    array[10] = array2[10] = 99999;
 
     clock_t fst, snd;
 
-    double tm1, tm2;
-
     fst = clock();
 
-    quicksort(array, 0, size);
-
+    for (int i = 0; i < size; i++)
+    {
+        int p = procura3(array, 0, size-1, i);
+    }
+    
     snd = clock();
 
-    tm1 = (double)(snd-fst) / CLOCKS_PER_SEC;
-
-    fst = clock();
-
-    radix_lsd(array2, size);
-
-    snd = clock();
-
-    tm2 = (double)(snd-fst) / CLOCKS_PER_SEC;
-
-    printf("Tempo com:\n\tQuicksort: %lf\n\tRadixLSD: %lf\n", tm1, tm2);
-
-    // print_array(array, size);
-    // print_array(array2, size);
-
+    printf("%lf segundos\n", (double)(snd-fst) / CLOCKS_PER_SEC);
 
     return 0;
 }

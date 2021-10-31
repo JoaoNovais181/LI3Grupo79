@@ -26,7 +26,23 @@ int Exercicio1 ()
     return 0;
 }
 
-// int Ecercicio2 ()
-// {
-    // GH_USER_ARRAY = read_users_from_file("saida/users-ok.csv");
-// }
+int Ecercicio2 ()
+{
+    // Ler os users do documentos users-ok
+    // Ler os commits do commits-ok
+    // Ler os repos do commits-ok
+
+    /* Verificar os commits
+
+    Procurar no array dos users o committer_id e o author_id (se nao encontrar nao escreve no ficheiro)
+    Procurar no array dos repos o repo_id (se nao encontrar nao escreve)
+
+    */
+
+    /* Verificar os repos
+
+    Procurar no array dos users o owner_id (se nao encontrar nao escreve no ficheiro)
+    Procurar no array dos commits o id do repositorio (se encontrar pelo menos um é valido)
+
+    */
+}

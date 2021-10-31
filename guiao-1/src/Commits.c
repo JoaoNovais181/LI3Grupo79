@@ -96,7 +96,7 @@ void write_commit_to_file (FILE *file, GH_COMMIT commit)
 int write_commits_to_file (char* file_path, GH_COMMIT_ARRAY commits)
 {
     if (!commits) return  -1;
-    
+
     FILE *file = fopen(file_path, "w");
 
     if (!file) return -1;
@@ -171,4 +171,27 @@ void sort_commit_array (GH_COMMIT *array, int beg, int end)
         sort_commit_array(array, beg, j+1);
     if (i<end)
         sort_commit_array(array, i, end);
+}
+
+int search_user_id (GH_USER *array, int beg, int end, int val)
+{
+    int mid;
+
+    for (mid = ((end + beg)/2) ; (end - beg-1) ; mid = ((end + beg)/2))
+    {
+        if (val < array[mid]->id) end = mid;
+        else if (val > array[mid]->id) beg = mid;
+        else return mid;
+    }
+
+    return -1;
+}
+
+
+GH_COMMIT_ARRAY verify_commits (GH_COMMIT_ARRAY commits, GH_USER_ARRAY users, GH_REPO_ARRAY repos)
+{
+    for (int i = 0 ; i<commits->size ; i++)
+    {
+        if (search_user_id(users->array, 0, users->size-1, commits->array[i]->author_id) == -1) commits->array[i]->valid = 0;
+    }
 }
