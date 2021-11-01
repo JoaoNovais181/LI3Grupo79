@@ -52,7 +52,7 @@ void write_following_list (FILE *file, GH_USER usr) // Função utilizada para e
             fprintf(file, "%d, ", usr->following_list[i++]);
         }
 
-        fprintf(file, "%d]", usr->following_list[i]);
+        fprintf(file, "%d];", usr->following_list[i]);
     }
 }
 
@@ -92,7 +92,7 @@ void write_follower_list (FILE *file, GH_USER usr)  // Função utilizada para e
             fprintf(file, "%d, ", usr->follower_list[i++]);
         }
 
-        fprintf(file, "%d]", usr->follower_list[i]);
+        fprintf(file, "%d];", usr->follower_list[i]);
     }
 }
 
