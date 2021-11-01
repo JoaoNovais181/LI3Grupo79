@@ -1,4 +1,5 @@
-testes
+
+testes/
 /guiao-1/entrada/*.csv
 /guiao-1/saida/*.csv
 .vscode
